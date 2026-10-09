@@ -16,6 +16,7 @@ RUN pip3 install -r requirements.txt --break-system-packages
 # Copy code
 COPY main.py .
 COPY fc_worker ./fc_worker
+COPY scripts ./scripts
 
 # Start Celery worker
 CMD ["celery", "-A", "main.celery", "worker", "--loglevel", "info"]
